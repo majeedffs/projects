@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+
+<div class="auth-wrap">
+
+    <h2 id="title">Student Login</h2>
+    <p id="msg"></p>
+
+
+    <div id="loginForm">
+        <input id="email" type="email" placeholder="Email">
+        <input id="pass" type="password" placeholder="Password">
+
+        <button id="btnLogin" type="button">Login</button>
+
+        <div class="auth-row">
+            <button id="showReg" type="button">Sign Up</button>
+            <button type="button" onclick="window.location.href='index.html'">Home</button>
+        </div>
+    </div>
+
+
+    <div id="regForm" class="hidden" style="display:none;">
+        <input id="regEmail" type="email" placeholder="Email">
+        <input id="regPass" type="password" placeholder="Password">
+        <input id="regPass2" type="password" placeholder="Confirm Password">
+
+        <select id="roleSelect">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select>
+
+
+        <div id="studentFields">
+            <input id="studentId" placeholder="Student ID">
+
+            <select id="university">
+                <option value="">Select your university</option>
+                <option>University of Jordan</option>
+                <option>Jordan University of Science and Technology</option>
+                <option>Hashemite University</option>
+                <option>Yarmouk University</option>
+                <option>German Jordanian University</option>
+                <option>Al-Balqa Applied University</option>
+                <option>Mutah University</option>
+                <option>Al al-Bayt University</option>
+                <option>Princess Sumaya University for Technology</option>
+                <option>Applied Science Private University</option>
+                <option>Middle East University</option>
+                <option>Philadelphia University</option>
+                <option>Other</option>
+            </select>
+
+            <select id="major">
+                <option value="">Select your major</option>
+                <option>Computer Science</option>
+                <option>Software Engineering</option>
+                <option>Information Technology</option>
+                <option>Computer Information Systems</option>
+                <option>Data Science</option>
+                <option>Cybersecurity</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+
+        <div id="teacherFields" class="hidden" style="display:none;">
+            <input id="department" placeholder="Department">
+            <input id="office" placeholder="Office">
+        </div>
+
+        <button id="btnReg" type="button">Create Account</button>
+
+        <div class="auth-row">
+            <button id="showLogin" type="button">Back to Login</button>
+            <button type="button" onclick="window.location.href='index.html'">Home</button>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="popBg">
+    <div>
+        <span id="popClose">×</span>
+        <h3>Passwords don’t match</h3>
+        <p>Please type the same password in both boxes.</p>
+    </div>
+</div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+
+
+        if (params.get("mode") === "signup") {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("regForm").style.display = "block";
+            document.getElementById("title").innerText = "Create Account";
+        }
+
+
+        const closeBtn = document.getElementById("popClose");
+        if (closeBtn) {
+            closeBtn.onclick = () => {
+                document.getElementById("popBg").style.display = "none";
+            };
+        }
+    });
+
+
+    function showPasswordPopup() {
+        document.getElementById("popBg").style.display = "flex";
+    }
+</script>
+
+<script type="module" src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Resource</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="nav">
+    <div class="title">Student Resource Hub</div>
+    <div>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="#" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:10px;">
+    <h1 style="font-size:26px; margin-bottom:6px;">Upload Resource</h1>
+    <p style="color:#6b7280;">Upload a file from your computer and save it to Firebase.</p>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <p id="msg" style="color:#dc2626; margin-bottom:10px;"></p>
+
+    <label style="display:block; font-weight:700; margin-bottom:6px;">Course Code</label>
+    <input id="course" type="text" placeholder="Example: CS355" style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:12px; margin-bottom:12px;">
+
+    <label style="display:block; font-weight:700; margin-bottom:6px;">Title (optional)</label>
+    <input id="title" type="text" placeholder="Example: Lecture 3 Notes" style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:12px; margin-bottom:12px;">
+
+    <label style="display:block; font-weight:700; margin-bottom:6px;">Choose File</label>
+    <input id="fileInput" type="file" style="margin-bottom:14px;">
+
+    <button id="btnUpload" type="button" style="width:100%; padding:12px 14px; border:none; border-radius:12px; font-weight:700; cursor:pointer; background:#2563eb; color:#fff;">
+      Upload
+    </button>
+
+    <div style="margin-top:14px;">
+      <div style="font-size:14px; color:#6b7280; margin-bottom:6px;">Progress</div>
+      <div style="width:100%; background:#e5e7eb; border-radius:999px; overflow:hidden;">
+        <div id="bar" style="width:0%; height:10px; background:#2563eb;"></div>
+      </div>
+      <div id="status" style="margin-top:8px; font-size:14px; color:#374151;"></div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <a class="btn secondary" href="dashboard.html">Back</a>
+    </div>
+  </div>
+
+</div>
+
+<script type="module" src="upload.js"></script>
+</body>
+</html>

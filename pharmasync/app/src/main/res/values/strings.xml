@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pharma3ync</string>
+    <string name="login_title">PharmaSync Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+</resources>

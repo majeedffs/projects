@@ -1,0 +1,13 @@
+# Secrets and local config
+univault/config.js
+**/google-services.json
+local.properties
+.env
+
+# Build output
+.gradle/
+build/
+*.iml
+.idea/
+.DS_Store
+Thumbs.db

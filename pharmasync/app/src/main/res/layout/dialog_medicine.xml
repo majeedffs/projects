@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Form (Tablet/Syrup/etc)"
+        android:minHeight="48dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Medicine Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/editQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantity"
+        android:inputType="number"
+        android:minHeight="48dp"
+
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/editShelf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Shelf Location"
+        android:inputType="text"
+        android:minHeight="48dp"
+
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/editStrength"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Strength (e.g., 200mg)"
+        android:inputType="text"
+        android:minHeight="48dp"
+
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/editPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+
+        android:layout_marginTop="8dp"/>
+</LinearLayout>

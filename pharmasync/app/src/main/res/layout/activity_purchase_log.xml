@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/noStockText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No medicines available in stock"
+        android:visibility="gone"
+        android:textSize="18sp"/>
+
+    <Spinner
+        android:id="@+id/medicineSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/blue"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:id="@+id/quantityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quantity:"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/quantityInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:hint="Enter quantity"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <TextView
+        android:id="@+id/customerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer Name:"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/customerNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:hint="Enter customer name"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/completePurchaseButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complete Purchase"
+        android:layout_marginTop="24dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/receiptTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:padding="8dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+    </ScrollView>
+</LinearLayout>

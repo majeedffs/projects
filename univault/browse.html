@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Resources</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="nav">
+        <div class="title">Student Resource Hub</div>
+        <div>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+
+    <div class="card" style="margin-top:10px;">
+        <h1 style="font-size:26px; margin-bottom:6px;">Browse Resources</h1>
+        <p style="color:#6b7280;">
+            Search by course code (example: CS355). Click Download to get the file.
+        </p>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+        <label style="display:block; font-weight:700; margin-bottom:6px;">Search Course</label>
+        <input id="searchCourse" type="text" placeholder="Type course code..."
+               style="width:100%; padding:12px 14px; border:1px solid #d1d5db; border-radius:12px; margin-bottom:12px;">
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button id="btnSearch" type="button"
+                    style="padding:10px 14px; border:none; border-radius:12px; font-weight:700; cursor:pointer; background:#2563eb; color:#fff;">
+                Search
+            </button>
+
+            <button id="btnClear" type="button"
+                    style="padding:10px 14px; border:1px solid #e5e7eb; border-radius:12px; font-weight:700; cursor:pointer; background:#f3f4f6; color:#111827;">
+                Clear
+            </button>
+
+            <a class="btn secondary" href="upload.html">Upload New File</a>
+        </div>
+
+        <p id="msg" style="margin-top:12px; color:#dc2626;"></p>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+        <h3 style="margin-bottom:10px;">Results</h3>
+        <div id="list" style="display:grid; gap:12px;"></div>
+    </div>
+
+    <div class="footer" style="color:#9ca3af;">
+        Student Resource Hub • Browse
+    </div>
+
+</div>
+
+<script type="module" src="browse.js"></script>
+</body>
+</html>
+

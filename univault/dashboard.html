@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        .dash-grid {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .dash-box {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .dash-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+        }
+
+        .dash-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .dash-box p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .dash-box a {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+
+    <div class="nav">
+        <div class="title">Student Resource Hub</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="#" id="logoutBtn">Logout</a>
+        </div>
+    </div>
+
+
+    <div class="card" style="margin-top:10px;">
+        <h1 style="font-size:26px; margin-bottom:6px;">Dashboard</h1>
+        <p style="color:#6b7280;">
+            Welcome back, <b id="userEmail">loading...</b>
+        </p>
+    </div>
+
+
+    <div class="dash-grid">
+
+        <div class="dash-box">
+            <h3>Upload Resource</h3>
+            <p>
+                Upload notes, PDFs, or study materials for your courses
+                so other students can access them.
+            </p>
+            <a class="btn primary" href="upload.html">Go to Upload</a>
+        </div>
+
+        <div class="dash-box">
+            <h3>Browse Resources</h3>
+            <p>
+                Browse and download resources shared by other students
+                by course code.
+            </p>
+            <a class="btn secondary" href="browse.html">Go to Browse</a>
+        </div>
+
+    </div>
+
+    <div class="footer" style="color:#9ca3af;">
+        Student Resource Hub • Dashboard
+    </div>
+
+</div>
+
+
+<script type="module">
+    import { firebaseConfig } from './config.js';
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+
+
+    const TEST_MODE = false;
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    if (TEST_MODE) {
+        document.getElementById("userEmail").innerText = "test@student.com";
+        document.getElementById("logoutBtn").onclick = () => {
+            window.location.href = "index.html";
+        };
+    } else {
+        onAuthStateChanged(auth, (user) => {
+            if (!user) {
+                window.location.href = "auth.html";
+                return;
+            }
+            document.getElementById("userEmail").innerText = user.email;
+        });
+
+        document.getElementById("logoutBtn").addEventListener("click", async (e) => {
+            e.preventDefault();
+            await signOut(auth);
+            window.location.href = "auth.html";
+        });
+    }
+</script>
+
+</body>
+</html>
+
